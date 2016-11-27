@@ -1,0 +1,30 @@
+{
+    "name": "sebastianwestberg/site-tree",
+    "description": "A tool for generating a tree-structured list of a website's internal links.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sebastian Westberg",
+            "email": "sebastianostbrink@gmail.com"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin"
+    },
+    "minimum-stability": "beta",
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "symfony/yaml": "^3.1"
+    },
+    "require-dev": {
+        "behat/behat": "^3.2.2",
+        "phpspec/phpspec": "^3.0",
+        "phpspec/nyan-formatters": "^2.0",
+        "phpunit/phpunit": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sebastianwestberg\\SiteTree\\": "src/"
+        }
+    }
+}

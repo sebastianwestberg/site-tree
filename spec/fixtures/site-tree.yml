@@ -1,0 +1,6 @@
+formatters:
+#    HtmlFormatter:
+#        css: false
+#        js: false
+    ConsoleFormatter:
+        http_codes: [403, 404, 500]

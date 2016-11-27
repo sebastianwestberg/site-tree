@@ -1,0 +1,6 @@
+default:
+    suites:
+        config:
+            contexts:
+                - ConfigContext
+            paths: [%paths.base%/features/config]

@@ -1,0 +1,7 @@
+extensions:
+    PhpSpec\NyanFormattersExtension\Extension: ~
+
+suites:
+    default:
+        namespace: Sebastianwestberg\SiteTree
+        psr4_prefix: Sebastianwestberg\SiteTree
