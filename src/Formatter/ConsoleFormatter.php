@@ -11,7 +11,7 @@ class ConsoleFormatter implements FormatterInterface
 
     private $options;
 
-    public function __construct(PresenterInterface $presenter = null, $options = null)
+    public function __construct(PresenterInterface $presenter = null, $options = array())
     {
         if (!$presenter) {
             $this->presenter = new ConsolePresenter();
@@ -22,11 +22,13 @@ class ConsoleFormatter implements FormatterInterface
         $this->options = $options;
     }
 
-    public function setOptions(array $options) {
+    public function setOptions(array $options)
+    {
         $this->options = $options;
     }
 
-    public function setPresenter(PresenterInterface $presenter) {
+    public function setPresenter(PresenterInterface $presenter)
+    {
         $this->presenter = $presenter;
     }
 }

@@ -28,8 +28,9 @@ interface HierarchyAwarePresenterInterface
     public function presentRootList();
 
     /**
+     * @param $text
      * @param $placement
-     * @return top|between|bottom
+     * @return string top|between|bottom
      */
     public function presentRootListItem($text, $placement);
 

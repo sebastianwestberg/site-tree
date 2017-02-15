@@ -50,6 +50,11 @@ class Config
         return $this;
     }
 
+    public function getFormatters()
+    {
+        return $this->formatters;
+    }
+
     /**
      * @param $formatters
      * @throws \Exception
@@ -65,7 +70,6 @@ class Config
             $this->formatters[] = FormatterFactory::create($formatter, $options);
         }
     }
-
 
     /**
      * @param $config

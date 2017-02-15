@@ -4,3 +4,7 @@ default:
             contexts:
                 - ConfigContext
             paths: [%paths.base%/features/config]
+        formatter:
+            contexts:
+                - FormatterContext
+            paths: [%paths.base%/features/formatter]

@@ -1,6 +1,5 @@
 <?php
 
-use Sebastianwestberg\Fizzbuzz\Fizzbuzz;
 use Behat\Gherkin\Node\TableNode;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Behat\Tester\Exception\PendingException;
@@ -11,9 +10,11 @@ require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functio
 
 class ConfigContext implements \Behat\Behat\Context\SnippetAcceptingContext
 {
-    private $config;
+    protected $config;
 
-    private $filename;
+    protected $filename;
+
+    protected $formatters;
 
     public function __construct()
     {
@@ -50,14 +51,23 @@ class ConfigContext implements \Behat\Behat\Context\SnippetAcceptingContext
      */
     public function iLoadTheConfigFile()
     {
-        $yml = $this->config->load($this->filename);
+        $config = $this->config->load($this->filename);
+        $this->formatters = $config->getFormatters();
     }
 
     /**
-     * @Then I should get :format as a configured format
+     * @Then I should get :arg1 as a configured formatter
      */
-    public function iShouldGetAsAConfiguredFormat($format)
+    public function iShouldGetAsAConfiguredFormatter($formatter)
     {
-        throw new PendingException();
+        $formatterIsLoaded = false;
+
+        foreach ($this->formatters as $configuredFormatter) {
+            if ($configuredFormatter instanceof $formatter) {
+                $formatterIsLoaded = true;
+            }
+        }
+
+        assertTrue($formatterIsLoaded);
     }
 }
